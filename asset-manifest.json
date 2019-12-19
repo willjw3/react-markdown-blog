@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-markdown-blog/static/css/main.e48c7c5c.chunk.css",
+    "main.js": "/react-markdown-blog/static/js/main.384fe41c.chunk.js",
+    "main.js.map": "/react-markdown-blog/static/js/main.384fe41c.chunk.js.map",
+    "runtime-main.js": "/react-markdown-blog/static/js/runtime-main.e9d5f7c8.js",
+    "runtime-main.js.map": "/react-markdown-blog/static/js/runtime-main.e9d5f7c8.js.map",
+    "static/css/2.d3f87e4c.chunk.css": "/react-markdown-blog/static/css/2.d3f87e4c.chunk.css",
+    "static/js/2.a1bb3f32.chunk.js": "/react-markdown-blog/static/js/2.a1bb3f32.chunk.js",
+    "static/js/2.a1bb3f32.chunk.js.map": "/react-markdown-blog/static/js/2.a1bb3f32.chunk.js.map",
+    "index.html": "/react-markdown-blog/index.html",
+    "precache-manifest.5bd09db72f6f66d981b831aae1d013c6.js": "/react-markdown-blog/precache-manifest.5bd09db72f6f66d981b831aae1d013c6.js",
+    "service-worker.js": "/react-markdown-blog/service-worker.js",
+    "static/css/2.d3f87e4c.chunk.css.map": "/react-markdown-blog/static/css/2.d3f87e4c.chunk.css.map",
+    "static/css/main.e48c7c5c.chunk.css.map": "/react-markdown-blog/static/css/main.e48c7c5c.chunk.css.map",
+    "static/js/2.a1bb3f32.chunk.js.LICENSE": "/react-markdown-blog/static/js/2.a1bb3f32.chunk.js.LICENSE",
+    "static/media/index.css": "/react-markdown-blog/static/media/raleway-latin-900italic.c1c43520.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9d5f7c8.js",
+    "static/css/2.d3f87e4c.chunk.css",
+    "static/js/2.a1bb3f32.chunk.js",
+    "static/css/main.e48c7c5c.chunk.css",
+    "static/js/main.384fe41c.chunk.js"
+  ]
+}
