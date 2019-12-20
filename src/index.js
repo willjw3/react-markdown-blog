@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router, Route} from "react-router-dom"
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "typeface-raleway"
+import Home from "./pages/home"
+import About from "./pages/about"
+import Post from "./pages/post"
+import NotFound from "./pages/notfound"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Router>
+        <div>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/404" component={NotFound} />
+            <Route exact path="/post/:id" render={props => <Post {...props} />} />
+        </div>
+    </Router>, 
+    document.getElementById('root')
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

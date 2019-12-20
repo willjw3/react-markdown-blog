@@ -2,7 +2,9 @@ const path = require("path")
 const fs = require("fs")
 
 const dirPath = path.join(__dirname, "../src/content")
+const dirPathPages = path.join(__dirname, "../src/pages/content")
 let postlist = []
+let pagelist = []
 
 const getPosts = () => {
     fs.readdir(dirPath, (err, files) => {
@@ -38,8 +40,10 @@ const getPosts = () => {
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({lines, metadataIndices})
                 const content = parseContent({lines, metadataIndices})
+                const date = new Date(metadata.date)
+                const timestamp = date.getTime() / 1000
                 post = {
-                    id: i + 1,
+                    id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
                     author: metadata.author ? metadata.author : "No author given",
                     date: metadata.date ? metadata.date : "No date given",
@@ -47,7 +51,10 @@ const getPosts = () => {
                 }
                 postlist.push(post)
                 if (i === files.length - 1) {
-                    let data = JSON.stringify(postlist)
+                    const sortedList = postlist.sort ((a, b) => {
+                        return a.id < b.id ? 1 : -1
+                    })
+                    let data = JSON.stringify(sortedList)
                     fs.writeFileSync("src/posts.json", data)
                 }
                 
@@ -56,5 +63,25 @@ const getPosts = () => {
     })
     return 
 }
+const getPages = () => {
+    fs.readdir(dirPathPages, (err, files) => {
+        if (err) {
+            return console.log("Failed to list contents of directory: " + err)
+        }
+        files.forEach((file, i) => {
+            let page
+            fs.readFile(`${dirPathPages}/${file}`, "utf8", (err, contents) => { 
+                page = {
+                    content: contents
+                }
+                pagelist.push(page)
+                let data = JSON.stringify(pagelist)
+                fs.writeFileSync("src/pages.json", data)
+            })
+        })
+    })
+    return 
+}
 
 getPosts()
+getPages()
