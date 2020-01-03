@@ -1,7 +1,7 @@
 {
   "name": "markdown-blog",
   "version": "0.1.0",
-  "homepage": "https://willjw3.github.io/react-markdown-blog",
+  "homepage": "https://react-markdown-blog.netlify.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -18,9 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node public/main.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "server": "node public/main.js"
   },
   "eslintConfig": {
     "extends": "react-app"
